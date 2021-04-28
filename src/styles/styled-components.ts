@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {Dimensions} from 'react-native';
+import {Dimensions, Platform} from 'react-native';
 import {
   backgroundColor,
   borderRadius,
@@ -185,7 +185,5 @@ export const ProfilePhoto = styled.Image`
 export const NavHeader = styled.View`
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  top: -10px;
+  ${Platform.OS !== 'ios' && 'position: absolute;   left: 50%;   top: -10px;'}
 `;
