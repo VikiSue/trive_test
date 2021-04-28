@@ -13,8 +13,7 @@ cd trive_test
 yarn install
 
 4.Install pods for ios: 
-cd ios 
-pod install
+cd ios && pod install
 
 5.Usage:
  - npx create-react-native-app Create a new native React app.
@@ -25,6 +24,6 @@ pod install
 
 Sign in credentials:
 
-login: aboutreact11@gmail.com";
+login: aboutreact11@gmail.com;
 
 password: 12345;
