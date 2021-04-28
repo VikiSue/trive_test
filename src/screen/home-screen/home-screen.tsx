@@ -10,7 +10,7 @@ import {
   TransparentSmallButton,
   TransparentSmallButtonText,
 } from '../../styles/styled-components';
-import {useUserStore} from '../../core/store';
+import {useUserStore} from '../../state/store';
 import ImagePicker from 'react-native-image-crop-picker';
 
 export const HomeScreen = () => {

@@ -3,12 +3,12 @@ import {FormWrap} from '../../components/form/form-wrap';
 import {Formik} from 'formik';
 import {SignUpSchema} from '../../util/validation';
 import {DarkButton, DarkButtonText, ErrorText, TextInput} from '../../styles/styled-components';
-import {useUserStore} from '../../core/store';
+import {useUserStore} from '../../state/store';
 
 const initialValues = {name: '', age: '', address: '', email: 'string', password: ''};
 
 export const SignUp = () => {
-  const [userRegister, isLoading] = useUserStore(state => [state.userRegister, state.isLoading]);
+  const userRegister = useUserStore(state => state.userRegister);
   return (
     <FormWrap
       title="Register Form"

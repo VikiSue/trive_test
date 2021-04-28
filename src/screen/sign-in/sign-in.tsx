@@ -2,7 +2,7 @@ import React from 'react';
 import {DarkButton, DarkButtonText, ErrorText, TextInput} from '../../styles/styled-components';
 import {Formik} from 'formik';
 import {SignInSchema} from '../../util/validation';
-import {useUserStore} from '../../core/store';
+import {useUserStore} from '../../state/store';
 import {FormWrap} from '../../components/form/form-wrap';
 
 const initialValues = {email: 'string', password: ''};

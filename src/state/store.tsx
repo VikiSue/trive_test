@@ -3,6 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {BASE_URL, postData} from '../util/fetch-data';
 import Toast from 'react-native-toast-message';
 
+const defaultPhoto = 'https://www.loudegg.com/wp-content/uploads/2020/10/Patrick-Star.jpg';
+
 type SignInStore = {
   user: {
     name: string;
@@ -39,7 +41,7 @@ export const useUserStore = create<SignInStore>(set => ({
         set({
           user: {
             ...response.data.data,
-            img: 'https://www.loudegg.com/wp-content/uploads/2020/10/Patrick-Star.jpg',
+            img: defaultPhoto,
           },
           isLoading: false,
         });
@@ -47,7 +49,7 @@ export const useUserStore = create<SignInStore>(set => ({
           'user',
           JSON.stringify({
             ...response.data.data,
-            img: 'https://www.loudegg.com/wp-content/uploads/2020/10/Patrick-Star.jpg',
+            img: defaultPhoto,
           }),
         );
         Toast.show({
@@ -79,7 +81,7 @@ export const useUserStore = create<SignInStore>(set => ({
       set({
         user: {
           ...response.data.data,
-          img: 'https://www.loudegg.com/wp-content/uploads/2020/10/Patrick-Star.jpg',
+          img: defaultPhoto,
         },
         isLoading: false,
       });
@@ -87,7 +89,7 @@ export const useUserStore = create<SignInStore>(set => ({
         'user',
         JSON.stringify({
           ...response.data.data,
-          img: 'https://www.loudegg.com/wp-content/uploads/2020/10/Patrick-Star.jpg',
+          img: defaultPhoto,
         }),
       );
       Toast.show({

@@ -2,16 +2,16 @@ import * as React from 'react';
 import {HomeScreen} from '../screen/home-screen/home-screen';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {PhotoScreen} from '../screen/photo-screen/photoScreen';
-import {TouchableOpacity, View} from 'react-native';
-import {DarkButtonText, NavHeader} from '.././styles/styled-components';
+import {SecondScreen} from '../screen/second-screen/second-screen';
+import {TouchableOpacity} from 'react-native';
+import {DarkButtonText, NavHeader} from '../styles/styled-components';
 // @ts-ignore
 import HomeIcon from './../assets/home.svg';
 // @ts-ignore
 import GalleryIcon from './../assets/gallery.svg';
 // @ts-ignore
 import Logo from '../assets/logo.svg';
-import {useUserStore} from './store';
+import {useUserStore} from '../state/store';
 import {backgroundColor, brandColor, paleColor, secondBrandColor} from '../styles/style-const';
 
 const Tab = createBottomTabNavigator();
@@ -23,11 +23,11 @@ const Home = () => {
       screenOptions={({route}) => ({
         tabBarIcon: ({focused}) => {
           if (route.name === 'Home') {
-            let fill = focused ? brandColor : paleColor;
+            const fill = focused ? brandColor : paleColor;
             return <HomeIcon height={25} width={25} fill={fill} />;
           }
-          if (route.name === 'Photo') {
-            let fill = focused ? brandColor : paleColor;
+          if (route.name === 'Second') {
+            const fill = focused ? brandColor : paleColor;
 
             return <GalleryIcon height={25} width={25} fill={fill} />;
           }
@@ -42,7 +42,7 @@ const Home = () => {
         },
       }}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Photo" component={PhotoScreen} />
+      <Tab.Screen name="Second" component={SecondScreen} />
     </Tab.Navigator>
   );
 };

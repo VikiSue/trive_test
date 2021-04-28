@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-export const PhotoScreen = () => {
+export const SecondScreen = () => {
   return (
     <View>
-      <Text>PhotoScreen</Text>
+      <Text>Second Screen</Text>
     </View>
   );
 };
